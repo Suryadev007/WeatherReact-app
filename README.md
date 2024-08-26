@@ -6,7 +6,7 @@
 - if not first install node from
  https://nodejs.org/en/download/package-manager
 - Get the weather api from https://openweathermap.org/api/
-- Go to src->components->home.js
+- Go to src/components/home.js
   and insert your api-key to apiKey 
 ### Step 1: Clone the repo on your device
 ```
