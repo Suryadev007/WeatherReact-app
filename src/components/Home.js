@@ -6,19 +6,19 @@ import brokenCloud from "../image/brokenCloud.png";
 import rainy from "../image/rainy.png";
 
 function Home() {
-  // const [url, setUrl] = useState("");
   const [weatherData, setWeatherData] = useState("");
   const [Timer, setTimer] = useState("");
   const [curLoc, setcurLoc] = useState("");
-
   const [loc, setLoc] = useState("");
   const [Time, setTime] = useState("");
+  const apiKey = {"Your api key goes here!!!"};
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b7211f1223b756b5e9538b6cdd0bb84d`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -61,7 +61,7 @@ function Home() {
   const Search = async (loc) => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${loc}&units=metric&appid=b7211f1223b756b5e9538b6cdd0bb84d`
+        `https://api.openweathermap.org/data/2.5/weather?q=${loc}&units=metric&appid=${apiKey}`
       );
       const data = await response.json();
       setWeatherData({
@@ -84,33 +84,12 @@ function Home() {
         img:
           "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png",
       });
-    } catch (error) {} // const timeSearch = async (lat, lon) => {
-    //   try {
-    //     const response = await fetch(
-    //       `https://timeapi.io/api/time/current/coordinate?latitude=${lat}&longitude=${lon}`
-    //     );
-    //     const data = await response.json();
-    //     setTime(data.time);
-    //   } catch (error) {}
-    // };
+    } catch (error) {}
   };
 
-  // const timeSearch = async (lat, lon) => {
-  //   try {
-  //     const response = await fetch(
-  //       `https://timeapi.io/api/time/current/coordinate?latitude=${lat}&longitude=${lon}`
-  //     );
-  //     const data = await response.json();
-  //     setTime(data.time);
-  //   } catch (error) {}
-  // };
-
   useEffect(() => {
-    // timeSearch(weatherData.lat, weatherData.lon);
     Search(loc);
   }, [loc, weatherData.lat, weatherData.lon]);
-
-  // console.log(Time);
 
   const time = new Date().toLocaleTimeString();
   useEffect(() => {
@@ -121,7 +100,7 @@ function Home() {
   }, [time]);
   var hour = (Timer.slice(0, 2) % 12).toString().padStart(2, "0");
   // eslint-disable-next-line no-redeclare
-  var hour = hour==0? "12": hour;
+  var hour = hour == 0 ? "12" : hour;
   var minute = Timer.slice(3, 5);
   var ampm = Timer.slice(0, 2) >= 12 ? "PM" : "AM";
   //day and date
