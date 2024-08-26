@@ -1,3 +1,5 @@
+![alt text](src/image/home.png)
+
 # To run this Weather React App on your device
 ## pre-requisite
 - node installed on your device
@@ -22,4 +24,5 @@ npm i
 ```
 npm start
 ```
-+ Weather react app now running on your localhost 
++ Weather react app now running on your localhost
+  
