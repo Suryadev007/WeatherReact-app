@@ -22,4 +22,4 @@ npm i
 ```
 npm start
 ```
-+Weather react app now running on your localhost 
++ Weather react app now running on your localhost 
