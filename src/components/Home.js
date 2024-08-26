@@ -11,7 +11,7 @@ function Home() {
   const [curLoc, setcurLoc] = useState("");
   const [loc, setLoc] = useState("");
   const [Time, setTime] = useState("");
-  const apiKey = {"Your api key goes here!!!"};
+  const apiKey = "b7211f1223b756b5e9538b6cdd0bb84d";
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
