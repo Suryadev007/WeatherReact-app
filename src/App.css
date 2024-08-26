@@ -1,0 +1,79 @@
+.body {
+  background: radial-gradient(
+    circle at 1.8% 4.8%,
+    rgb(17, 23, 58) 0%,
+    rgb(58, 85, 148) 90%
+  );
+  background-size: 100% 100%;
+  transition: background 0.5s ease-in-out;
+  height: 100vh;
+  width: 100vw;
+}
+* {
+  font-weight: bold;
+}
+.main {
+  font-size: 7em;
+  animation: rot 50s infinite;
+  background: none;
+  color:#FDB813;  
+ filter: drop-shadow(0 0 0.7rem white);
+}
+@keyframes rot {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.icon {
+  height: 20vh;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.search-form {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.search-form input[type="search"],
+button,search-form input[type="search"],
+button:focus {
+  background-color: #444;
+  color: white;
+}
+
+.search-form input[type="search"]:focus {
+  border: none;
+  outline: none;
+}
+.search-form input[type="search"]::placeholder {
+  color: white;
+}
+.search-form button i {
+  font-size: 1.5em;
+  color: white;
+  padding: 0.4em;
+}
+.dateTime-div {
+  background: radial-gradient(
+    circle at -4% -12.9%,
+    rgb(74, 98, 110) 0.3%,
+    rgb(30, 33, 48) 90.2%
+  );
+  border-radius: 0.5em;
+  color: white;
+  font-size: 1.2em;
+  box-shadow: 5px 5px 0px #777;
+}
+.icn{
+  font-size: 2.2em;
+  color: #FDB813;
+ 
+}
+.icn > span {
+  font-size: 0.6em;
+  color: white;
+}
